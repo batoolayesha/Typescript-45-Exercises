@@ -1,0 +1,36 @@
+//creating a guest list array;
+var guestList = ["Ayesha", "Fatima", "Farwa", "Maham"];
+//making variable for those guest who can't come;
+var dontCome = guestList[3];
+//print the name of guest who cant come;
+console.log(dontCome, "Nahi a sakti han");
+//Add or Remove Values from Guest list array;
+guestList.splice(3, 4, "Sadia");
+//message print for bigger table;
+console.log("Good News ! We have Found a Bigger Table For Dinner.");
+//Adding a new guest at starting index of array;
+guestList.unshift("Aliza");
+//Adding a new guest at the ending of the array;
+guestList.push("Zainab");
+//Get a  middle index of our Array;
+var middleIndex = Math.floor(guestList.length / 2);
+//Adding a new guest to middle index of the array;
+guestList.splice(middleIndex, 0, "Neelam");
+//printing a message of updated list;
+console.log("Updated List of our Guesst");
+//Sending a invitation message to our guests one by one with their names;
+guestList.forEach(function (oneGuest) { return console.log(" Salam ".concat(oneGuest, " would you like you dinner with me")); });
+//inform that only two guest can be invited;
+console.log("Unfortunately, the new dinner wont arrive on time, so i can only invite two guest to dinner with me");
+//using while loop to remove guest from the array until onlu two names remains;
+while (guestList.length > 2) {
+    var removedguesst = guestList.pop();
+    console.log("Sorry, ".concat(removedguesst, " I can't invite you to dinner"));
+}
+// sending a invititions to the last two guest on the list;
+console.log("Invitations to the last two guest");
+guestList.forEach(function (lasttwo) { return console.log("Luckly ".concat(lasttwo, " you are still invited to dinner")); });
+//Removing last two guesst from the list;
+guestList.pop();
+guestList.pop();
+console.log("Empty List:", guestList);
